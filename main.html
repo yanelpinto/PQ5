@@ -8,12 +8,6 @@
 <body>
 
 <script>
-	
-	
-function myfunc2()
-{
-
-}
 
 
 function myfunc()										// Function for selecting dropdown option based on radio button selected.
@@ -25,14 +19,17 @@ var sbox = window.parent.sideframe.form2.list1;				 // Shortcut var to sideframe
 	{
 		if (document.form1.group1[i].checked)				 // If statement to select corresponding select box on sideframe
 		{
-			sbox.options[i].selected = true;				 //	frame.
+			if (sbox.options[i].selected != true)    		 //	frame.
+			{
+				sbox.options[i].selected = true;
+			}
 		}
 	}
 }
 	
 </script>
-	
-<form name="form1">
+
+<form name="form1">				<!--Form and radio button group setup-->	
 <div id="checkboxes">
   <div class="radiobuttons">
     <label for="radio1">1</label>

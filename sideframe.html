@@ -5,11 +5,25 @@
 <title>Untitled Document</title>
 </head>
 <script>
+
+function myfunc2()
+{
+var i;
+var rad = window.parent.mainframe.form1;					// Shortcut to mainframe frame
+
+	for (i=0; i < document.form2.list1.length;i++)          // For loop for getting value of radio button selected
+		{
+			if (document.form2.list1.options[i].selected)	// Select corresponding radio button in mainframe frame.
+				{
+				rad.group1[i].checked = true;	
+				}
+		}
+}
 	
 </script>
 <body>	
-<form name = "form2">
-<select name = "list1">
+<form name = "form2">							<!--Form2 and dropdown list setup-->
+<select name = "list1" onChange= "myfunc2()">
   <option value="s1">Select 1</option>
   <option value="s2">Select 2</option>
   <option value="s3">Select 3</option>
